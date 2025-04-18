@@ -174,7 +174,7 @@ const MainLayout = ({ children }: MainLayoutProps = {}) => {
                 (item) =>
                   item.path.startsWith(`/${pathSegments[0]}`) &&
                   (index === 0 ||
-                    item.items.some((subItem) => subItem.path === path)),
+                    item.items.some((subItem) => subItem.path === path))
               );
 
               // Get the title from navigation items if possible
@@ -185,7 +185,7 @@ const MainLayout = ({ children }: MainLayoutProps = {}) => {
                 title = navItem.title;
               } else if (index > 0 && navItem) {
                 const subItem = navItem.items.find(
-                  (item) => item.path === path,
+                  (item) => item.path === path
                 );
                 if (subItem) title = subItem.title;
               }
@@ -213,9 +213,7 @@ const MainLayout = ({ children }: MainLayoutProps = {}) => {
       </div>
 
       {/* Main Content */}
-      <main className="flex-1 container py-6">
-        {children || <Outlet />}
-      </main>
+      <main className="flex-1 container py-6">{children || <Outlet />}</main>
 
       {/* Footer */}
       <footer className="border-t py-4 bg-background">
